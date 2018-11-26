@@ -1,2 +1,6 @@
+# Folders ignored
 test/
 tmp/cache/bootsnap-compile-cache/
+# Files
+log/*.log
+
