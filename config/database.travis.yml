@@ -1,0 +1,6 @@
+test: &test
+  adapter: postgresql
+  encoding: utf8
+  database: wbooks-api_test
+  username: wbooks-api
+  password: wbooks-api
