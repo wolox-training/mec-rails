@@ -29,4 +29,7 @@
 # Folders ignored
 test/
 
+# VSCode
+.vscode
+
 
