@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Authentication solution for Rails
 gem 'devise', '~> 4.5.0'
+gem 'devise_token_auth', '~> 1.0.0'
+gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
