@@ -44,6 +44,8 @@ gem 'omniauth'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails', '~> 4.11.1'
 end
 
 group :development do
@@ -62,6 +64,13 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # Database Cleaner is a set of strategies for cleaning your database in Ruby
+  gem 'database_cleaner', '~>1.7.0'
+  # Faker library that generates fake data
+  gem 'faker', '~>1.9.1'
+  # Matchers for testing
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
