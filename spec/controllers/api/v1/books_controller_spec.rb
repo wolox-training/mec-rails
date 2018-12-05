@@ -3,14 +3,7 @@ require 'faker'
 
 shared_context 'Authenticated User' do
   include Devise::Test::ControllerHelpers
-  let(:user) do
-    User.new(
-      email: Faker::Internet.email,
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      password: Faker::Internet.password
-    )
-  end
+  let(:user) { create(:user) }
   before do
     request.headers.merge! user.create_new_auth_token
   end
@@ -20,14 +13,7 @@ describe Api::V1::BooksController, type: :controller do
   include_context 'Authenticated User'
 
   before(:all) do
-    @book = Book.create(
-      genre: Faker::Book.genre,
-      author: Faker::Book.author,
-      image: Faker::File.file_name('path/to'),
-      title: Faker::Book.title,
-      editor: Faker::Book.publisher,
-      year: Faker::Number.number(4)
-    )
+    @book = create(:book)
     @rent = Rent.create(
       user_id: 1,
       book_id: 1,
