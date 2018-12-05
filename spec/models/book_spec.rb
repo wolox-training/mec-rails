@@ -1,21 +1,20 @@
 require 'rails_helper'
 require 'faker'
 
-describe Book do
-  subject(:book) do
-    Book.new(
-      genre: Faker::Book.genre,
-      author: Faker::Book.author,
-      image: Faker::File.file_name('path/to'),
-      title: Faker::Book.title,
-      editor: Faker::Book.publisher,
-      year: Faker::Number.number(4)
-    )
-  end
+describe Book, type: :model do
+  subject(:book) { build(:book) }
+  # Validation for each attr
+  it { is_expected.to validate_presence_of(:genre) }
+  it { is_expected.to validate_presence_of(:author) }
+  it { is_expected.to validate_presence_of(:image) }
+  it { is_expected.to validate_presence_of(:title) }
+  it { is_expected.to validate_presence_of(:editor) }
+  it { is_expected.to validate_presence_of(:year) }
+  # End of validation for Each attr
+  # Validations for this instance
   it { is_expected.to be_a_new(Book) }
-  it { is_expected.to be_new_record }
   it { is_expected.to be_valid }
-
+  # End of Validation for this instance.
   describe 'Book model tests' do
     context 'When book is created' do
       it 'Check a succeful save' do
