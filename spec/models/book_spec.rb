@@ -18,10 +18,8 @@ describe Book, type: :model do
   describe 'Book model tests' do
     context 'When book is created' do
       it 'Check a succeful save' do
-        book = Book.new(genre: 'Comedy', author: 'Wolox', image: 'AnImage', title: 'Test tittle',
-                        editor: 'Wolox', year: 2000)
-        book.save!
-        expect(Book.exists?(title: 'Test tittle')).to eq(true)
+        book = create(:book)
+        expect(Book.exists?(title: book.title)).to eq(true)
       end
     end
   end
