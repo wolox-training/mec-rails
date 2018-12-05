@@ -17,19 +17,14 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      ## User Info
-      t.string :name unless column_exists?(table, :name)
-      t.string :nickname unless column_exists?(table, :nickname)
-      t.string :image unless column_exists?(table, :image)
-
       ## Tokens
-      t.json :tokens unless column_exists?(table, :tokens)
+      t.json :tokens
 
       #t.timestamps
     end
 
     #add_index :users, :email,                unique: true unless index_exists?(:users, :email)
-    add_index :users, [:uid, :provider],     unique: true unless index_exists?(:users, [:uid, :provider])
+    add_index :users, [:uid, :provider],     unique: true
     # add_index :users, :unlock_token,       unique: true
   end
 end
