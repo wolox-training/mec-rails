@@ -39,13 +39,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Authentication solution for Rails
 gem 'devise', '~> 4.5.0'
 gem 'devise_token_auth', '~> 1.0.0'
-gem 'omniauth'
+gem 'omniauth', '~> 1.8.1'
 
 # For Models to jsons
 gem 'active_model_serializers', '~> 0.10.0'
 
 # For Pagination
-gem 'wor-paginate'
+gem 'wor-paginate', '~> 0.1.4'
 
 
 group :development, :test do
@@ -77,7 +77,7 @@ group :test do
   gem 'faker', '~>1.9.1'
   # Matchers for testing
   gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', '~>1.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
