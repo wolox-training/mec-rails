@@ -33,7 +33,9 @@ describe Api::V1::BooksController, type: :controller do
       end
 
       it 'responses with the book as json' do
-        expect(response_body.to_json).to eq(@book.to_json)
+        expect(
+          response_body['id']
+        ).to eq(@book.id)
       end
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
