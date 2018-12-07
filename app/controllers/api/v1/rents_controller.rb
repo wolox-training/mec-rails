@@ -3,14 +3,18 @@ module Api
     class RentsController < ApplicationController
       before_action :authenticate_user!
       def index
-        render_paginated Rent.where(user_id: params[:user_id]), each_serializer: RentSerializer
+        user = User.find(params[:user_id])
+        render_paginated user.rents, each_serializer: RentSerializer
       end
 
       def create
-        rent_data = params[:rent]
-        rent = Rent.create(user_id: rent_data[:user_id], book_id: rent_data[:book_id],
-                           start: rent_data[:start], end: rent_data[:end])
-        render json: rent, status: :created
+        user = User.find(params[:user_id])
+        new_rent = user.rents.new(create_rent_params)
+        if new_rent.save
+          render json: new_rent, serializer: RentSerializer, status: :created
+        else
+          render json: { errors: new_rent.errors }, status: :unprocessable_entity
+        end
       end
     end
   end
