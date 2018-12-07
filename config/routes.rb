@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
      resources :books, only: [:show, :index]
+     resources :users do
+      resources :rents, only: [:create, :index]
+     end
     end
    end
 
