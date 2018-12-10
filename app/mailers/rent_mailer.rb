@@ -1,5 +1,6 @@
 class RentMailer < ApplicationMailer
-  def new_rent_created(rent)
+  def new_rent_created(rent_id)
+    rent = Rent.find(rent_id)
     @user = rent.user
     @rent = rent
     @book = rent.book
