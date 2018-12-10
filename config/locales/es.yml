@@ -29,17 +29,17 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello"
+es:
+  hello: "Hola"
   email:
     new_rent:
-      mail_header: "There are a new Rent in your account!"
-      rent_created_at: "Rent created at"
-      book_details: "Book Details"
-      title: "Title"
-      author: "Author"
-      genre: "Genre"
+      mail_header: "Hay un nuevo alquiler en su cuenta!"
+      rent_created_at: "Alquiler creado el"
+      book_details: "Detalle de libro"
+      title: "Titulo"
+      author: "Autor"
+      genre: "Género"
       editor: "Editor"
-      year: "Year"
-      rent_period: "Period of the rent"
-      new_rent_subject: "New Rent was Created"
+      year: "Año"
+      rent_period: "Período del alquiler"
+      new_rent_subject: "Nuevo Alquiler registrado"
