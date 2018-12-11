@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# BookSuggestion.create(user_id:1, genre:"terror", author:"yo", image:"path",title:"TitleOne",editor:"Wolox",year:2001,synopsis:"Una Sinopsis bien hecha", price:10.2)
+
