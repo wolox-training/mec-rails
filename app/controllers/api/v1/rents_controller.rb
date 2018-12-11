@@ -4,12 +4,14 @@ module Api
       before_action :authenticate_user!
       def index
         user = User.find(params[:user_id])
+        authorize user.rents[0]
         render_paginated user.rents, each_serializer: RentSerializer
       end
 
       def create
         user = User.find(params[:user_id])
         new_rent = user.rents.new(rent_params)
+        authorize new_rent
         if new_rent.save
           RentMailer.new_rent_created(new_rent.id).deliver_later
           render json: new_rent, serializer: RentSerializer, status: :created
