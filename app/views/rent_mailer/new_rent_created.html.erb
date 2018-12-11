@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div>
+    <h1> There are a new Rent in your account!</h1>
+      <p> Rent created at: <%= Time.now %></p>
+      <h3>Book Details:</h3> 
+      <ul>
+        <li><b>Title:</b> <%= @book.title %></li>
+        <li><b>Author:</b> <%= @book.author %></li>
+        <li><b>Genre:</b> <%= @book.genre %></li>
+        <li><b>Editor:</b> <%= @book.editor %></li>
+        <li><b>Year:</b> <%= @book.year %></li>
+      </ul>
+      <hr>
+      <p>Period of the rent: <%= @rent.start %> - <%= @rent.end %></p>
+    </div>
+  </body>
+</html>
