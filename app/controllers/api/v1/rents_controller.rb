@@ -3,13 +3,11 @@ module Api
     class RentsController < ApplicationController
       before_action :authenticate_user!
       def index
-        user = User.find(params[:user_id])
-        render_paginated user.rents, each_serializer: RentSerializer
+        render_paginated user_get.rents, each_serializer: RentSerializer
       end
 
       def create
-        user = User.find(params[:user_id])
-        new_rent = user.rents.new(rent_params)
+        new_rent = user_get.rents.new(rent_params)
         if new_rent.save
           render json: new_rent, serializer: RentSerializer, status: :created
         else
@@ -19,6 +17,10 @@ module Api
 
       def rent_params
         params.require(:rent).permit(:user_id, :book_id, :start, :end)
+      end
+
+      def user_get
+        User.find(params[:user_id])
       end
     end
   end
