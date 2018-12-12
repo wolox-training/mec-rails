@@ -50,6 +50,9 @@ gem 'wor-paginate', '~> 0.1.4'
 # Background task
 gem 'sidekiq', '~> 5.2.3'
 
+# For makes HTTP
+gem 'httparty', '~> 0.16.3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
