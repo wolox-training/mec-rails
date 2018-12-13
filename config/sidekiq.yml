@@ -1,0 +1,4 @@
+:schedule:
+  check_due_rents:
+    cron: '16 14 * * *'
+    class: SendDueNotificationWorker
