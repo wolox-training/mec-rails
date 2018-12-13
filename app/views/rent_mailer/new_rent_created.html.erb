@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div>
+    <h1> <%= t('email.new_rent.mail_header') %></h1>
+      <p> <%= t('email.new_rent.rent_created_at')%>: <%= Time.now %></p>
+      <h3><%= t('email.new_rent.book_details')%>:</h3> 
+      <ul>
+        <li><b><%= t('email.new_rent.title')%>:</b> <%= @book.title %></li>
+        <li><b><%= t('email.new_rent.author')%>:</b> <%= @book.author %></li>
+        <li><b><%= t('email.new_rent.genre')%>:</b> <%= @book.genre %></li>
+        <li><b><%= t('email.new_rent.editor')%>:</b> <%= @book.editor %></li>
+        <li><b><%= t('email.new_rent.year')%>:</b> <%= @book.year %></li>
+      </ul>
+      <hr>
+      <p><%= t('email.new_rent.rent_period')%>: <%= @rent.start %> - <%= @rent.end %></p>
+    </div>
+  </body>
+</html>
