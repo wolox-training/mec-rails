@@ -8,6 +8,7 @@ module Api
 
       def create
         new_rent = user_get.rents.new(rent_params)
+        authorize new_rent
         if new_rent.save
           RentMailer.new_rent_created(new_rent.id).deliver_later
           render json: new_rent, serializer: RentSerializer, status: :created
