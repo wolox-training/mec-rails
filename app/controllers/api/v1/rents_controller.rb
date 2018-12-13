@@ -3,7 +3,6 @@ module Api
     class RentsController < ApplicationController
       before_action :authenticate_user!, :set_locale
       def index
-        authorize user_get.rents[0]
         render_paginated user_get.rents, each_serializer: RentSerializer
       end
 
