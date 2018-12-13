@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_many :rents, dependent: :destroy
   has_many :books, through: :rents
+  has_many :booksuggestions, dependent: :destroy
 end
