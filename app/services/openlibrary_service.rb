@@ -3,8 +3,7 @@ class OpenLibraryService
   base_uri 'openlibrary.org'
   def book_info(isbn)
     @isbn = isbn
-    response = self.class.get('/api/books', request_body)
-    parsing_isbn_response(response)
+    self.class.get('/api/books', request_body)
   end
 
   def request_body

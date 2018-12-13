@@ -5,7 +5,11 @@ module Api
       def query_by_isbn
         service = OpenLibraryService.new
         external_response = service.book_info(params[:isbn])
-        render json: external_response
+        if external_response.status == :ok
+          render json: service.parsing_isbn_response(external_response)
+        else
+          render json: external_response.message, status: :bad_request
+        end
       end
     end
   end
