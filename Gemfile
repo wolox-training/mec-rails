@@ -47,12 +47,16 @@ gem 'active_model_serializers', '~> 0.10.0'
 # For Pagination
 gem 'wor-paginate', '~> 0.1.4'
 
+# Background task
+gem 'sidekiq', '~> 5.2.3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails', '~> 4.11.1'
+  gem 'dotenv-rails', '~> 2.5.0'
 end
 
 group :development do
