@@ -1,6 +1,6 @@
 module Api
   module V1
-    class RentsController < ApplicationController
+    class RentsController < ApiController
       before_action :authenticate_user!, :set_locale
       def index
         render_paginated user_get.rents, each_serializer: RentSerializer
