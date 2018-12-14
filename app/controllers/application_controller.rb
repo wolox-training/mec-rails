@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  #include DeviseTokenAuth::Concerns::SetUserByToken
   include Wor::Paginate
   include Pundit
   # For APIs, you may want to use :null_session instead.
