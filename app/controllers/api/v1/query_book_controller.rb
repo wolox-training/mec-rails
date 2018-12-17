@@ -1,7 +1,7 @@
 require 'openlibrary_service'
 module Api
   module V1
-    class QueryBookController < ApplicationController
+    class QueryBookController < ApiController
       def query_by_isbn
         service = OpenLibraryService.new
         external_response = service.book_info(params[:isbn])
