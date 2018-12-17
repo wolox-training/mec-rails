@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div>
+    <h1> Hi! <%= @user.first_name %>, your rent is expired!</h1>
+      <p> The rent: <%= @rent.id%></p>
+      <p>For this book:<p> 
+      <ul>
+        <li><b>Title:</b> <%= @book.title %></li>
+        <li><b>Author:</b> <%= @book.author %></li>
+        <li><b>Genre:</b> <%= @book.genre %></li>
+        <li><b>Editor:</b> <%= @book.editor %></li>
+        <li><b>Year:</b> <%= @book.year %></li>
+      </ul>
+      <p>Was expired at <%= @rent.end %></p>
+      <hr>
+      
+    </div>
+  </body>
+</html>
