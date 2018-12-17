@@ -8,6 +8,7 @@ Rails.application.routes.draw do
      resources :users do
       resources :rents, only: [:create, :index]
      end
+     get '/query/book/:isbn', to: 'query_book#query_by_isbn'
     end
    end
 

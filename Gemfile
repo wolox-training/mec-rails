@@ -51,6 +51,9 @@ gem 'wor-paginate', '~> 0.1.4'
 gem 'sidekiq', '~> 5.2.3'
 gem 'sidekiq-scheduler', '~> 3.0.0'
 
+# For makes HTTP
+gem 'httparty', '~> 0.16.3'
+
 gem "pundit", '~> 2.0.0'
 
 gem 'activeadmin'
