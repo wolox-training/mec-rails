@@ -3,7 +3,7 @@ module Api
     class BookSuggestionsController < ApplicationController
       before_action :authenticate_user!
       def create
-        new_book_sugges = BookSuggestion.new(book_sugges_params, user: current_user)
+        new_book_sugges = BookSuggestion.new(book_sugges_params)
         if new_book_sugges.save
           render json: new_book_sugges, serializer: BookSuggestionSerializer, status: :created
         else
