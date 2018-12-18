@@ -1,6 +1,6 @@
 module Api
   module V1
-    class BookSuggestionsController < ApplicationController
+    class BookSuggestionsController < ApiController
       before_action :authenticate_user!
       def create
         new_book_sugges = BookSuggestion.new(book_sugges_params)
